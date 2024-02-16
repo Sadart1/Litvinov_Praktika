@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp2.Tarelk"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Tarelk" Height="400" Width="300" Background="#F2B6D2">
+    <Grid>
+        <Image Source="tarelki.png" Margin="56,10,56,260" />
+        <Label FontSize="14" FontWeight="Black" Content="Цена: 1500руб" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Height="27" Width="115"/>
+        <TextBlock FontSize="14" FontWeight="Black" HorizontalAlignment="Center" Margin="0,156,0,0" TextWrapping="Wrap" Text="Супер крутые тарелки, сделанные из лучшего стекла.
+                   
+                   Вы ни за что не пожалеете о покупке данного товара. Тарелки всегда помогут вам в организации праздника, банкета, и т.д. 
+                   Лучшие тарелки в мире!!!" VerticalAlignment="Top" Height="143" Width="280"/>
+        <Button FontSize="14" FontWeight="Black" Content="Вернуться" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Background="#9041A6" Width="300" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>
