@@ -26,7 +26,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
@@ -45,6 +45,8 @@ namespace WpfApp1
                 MessageBox.Show("Не ну ты ваще");
                 return;
             }
+            context.Korzi.RemoveRange(context.Korzi);
+            context.SaveChanges();
             MessageBox.Show("Харооош, ты вошел");
             this.Hide();
             Kategor kategor = new Kategor();

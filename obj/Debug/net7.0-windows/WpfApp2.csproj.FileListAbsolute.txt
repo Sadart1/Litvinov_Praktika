@@ -68,3 +68,5 @@ E:\Практика Литвинов\WpfApp2\obj\Debug\net7.0-windows\Tarelk.g.c
 E:\Практика Литвинов\WpfApp2\obj\Debug\net7.0-windows\Tarelk.baml
 E:\Практика Литвинов\WpfApp2\obj\Debug\net7.0-windows\Vilki.g.cs
 E:\Практика Литвинов\WpfApp2\obj\Debug\net7.0-windows\Vilki.baml
+E:\Практика Литвинов\WpfApp2\obj\Debug\net7.0-windows\Korzina.g.cs
+E:\Практика Литвинов\WpfApp2\obj\Debug\net7.0-windows\Korzina.baml

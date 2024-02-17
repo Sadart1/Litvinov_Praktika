@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="tarelki.png" />
+    <None Remove="vilki.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <Resource Include="tarelki.png" />
+    <Resource Include="vilki.png" />
   </ItemGroup>
 
 </Project>

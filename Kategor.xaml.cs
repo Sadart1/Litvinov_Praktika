@@ -23,6 +23,9 @@ namespace WpfApp1
         public Kategor()
         {
             InitializeComponent();
+            var context = new AppDbContext();
+            
+            
         }
         
 
@@ -30,6 +33,19 @@ namespace WpfApp1
         {
             Tarelk tarelk = new Tarelk();
             tarelk.Show();
+            var imagepath = tar.Source;
+            var context = new AppDbContext();
+            if (imagepath == null)
+            {
+                MessageBox.Show("Ошибка");
+                return;
+            }
+            var korz = new Korz { image = imagepath.ToString() };
+            context.Korzi.Add(korz);
+            context.SaveChanges();
+            MessageBox.Show("Добавлено");
+            Korzina korzina = new Korzina();    
+            korzina.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
