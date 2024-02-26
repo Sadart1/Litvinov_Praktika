@@ -24,34 +24,30 @@ namespace WpfApp1
         {
             InitializeComponent();
             var context = new AppDbContext();
-            
+            var allRecords = context.Tovar.ToList();
+            lb.ItemsSource = allRecords;
             
         }
-        
+
+        private void but_Click(object sender, RoutedEventArgs e)
+        {
+            var context = new AppDbContext();
+            var aa = context.Tovar.SingleOrDefault(x => x.id == lb.SelectedIndex + 1);
+
+
+            if (aa != null)
+            {
+                var b = new Korz { name = aa.name, image = aa.image, kratkoe_opis = aa.kratkoe_opis, opis = aa.opis, price = aa.price };
+                context.Korzi.Add(b);
+            }
+            context.SaveChanges();
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Tarelk tarelk = new Tarelk();
-            tarelk.Show();
-            var imagepath = tar.Source;
-            var context = new AppDbContext();
-            if (imagepath == null)
-            {
-                MessageBox.Show("Ошибка");
-                return;
-            }
-            var korz = new Korz { image = imagepath.ToString() };
-            context.Korzi.Add(korz);
-            context.SaveChanges();
-            MessageBox.Show("Добавлено");
-            Korzina korzina = new Korzina();    
+            this.Hide();
+            Korzina korzina = new Korzina();
             korzina.Show();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Vilki vilki = new Vilki();
-            vilki.Show();
         }
     }
 }

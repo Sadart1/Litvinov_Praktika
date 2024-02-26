@@ -25,6 +25,7 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Image Margin="0,0,-400,-366" Source="/Image4.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

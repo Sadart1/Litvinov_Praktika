@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="kofe.jpg" />
+    <None Remove="salph.png" />
     <None Remove="tarelki.png" />
     <None Remove="vilki.png" />
   </ItemGroup>
@@ -22,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="kofe.jpg" />
+    <Resource Include="salph.png" />
     <Resource Include="tarelki.png" />
     <Resource Include="vilki.png" />
   </ItemGroup>

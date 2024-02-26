@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1;
 
 namespace WpfApp2
 {
@@ -23,11 +24,33 @@ namespace WpfApp2
         {
             InitializeComponent();
             var context = new AppDbContext();
-            var path = context.Korzi.FirstOrDefault();
-            string imagePath = path.image;
-            BitmapImage bitmapImage = new BitmapImage(new Uri(imagePath, UriKind.RelativeOrAbsolute));
-            kartinka1.Source = bitmapImage;
+            var allRecords = context.Korzi.ToList();
+            lb.ItemsSource = allRecords;
+            var summa = context.Korzi.Select(x => x.price).ToList();
+            var sum = summa.Sum();
+            tb.Text = "Сумма заказа: " + sum + " руб";
         }
-        
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Kategor kategor = new Kategor();
+            kategor.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var context = new AppDbContext();
+            context.Korzi.RemoveRange(context.Korzi);
+            context.SaveChanges();
+            var allRecords = context.Tovar.ToList();
+            lb.ItemsSource = allRecords;
+
+        }
+
+        private void but_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

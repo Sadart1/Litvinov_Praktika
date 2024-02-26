@@ -23,17 +23,32 @@ namespace WpfApp2.Migrations
 
             modelBuilder.Entity("WpfApp2.Korz", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
                     b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ID");
+                    b.Property<string>("kratkoe_opis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("opis")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("price")
+                        .HasColumnType("real");
+
+                    b.HasKey("id");
 
                     b.ToTable("Korzi");
                 });

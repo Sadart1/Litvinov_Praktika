@@ -5,10 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Korzina" Height="450" Width="800" Background="#F2B6D2">
+        Title="Korzina" Height="550" Width="800" Background="#F2B6D2">
     <Grid>
-        <DockPanel Margin="0,0,564,339">
-            <Image x:Name="kartinka1" Height="71" Width="92" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
-        </DockPanel>
+        <ListBox Name="lb" Background="#F2B6D2" Margin="0,0,0,97">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=name}"/>
+                        <Image Height="70" Width="70">
+                            <Image.Source>
+                                <Binding Path="image">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>C:\WpfApp2\Image1.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock Text="{Binding Path=kratkoe_opis}"/>
+                        <ComboBox Text="Описание" IsReadOnly="True" SelectedIndex="0">
+                            <ComboBoxItem  Content="Описание" Name="a"/>
+                            <ComboBoxItem IsEnabled="False" Content="{Binding Path=opis}"/>
+                        </ComboBox>
+                        <TextBlock Text="{Binding Path=price}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button FontSize="34" FontWeight="Black" Background="#9041A6" Margin="10,369,400,87" Content="К списку" Click="Button_Click" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button FontSize="34" FontWeight="Black" Background="#9041A6" Margin="405,369,5,87" Content="Заказать" Click="Button_Click_1" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="10,342,0,0" TextWrapping="Wrap" Name="tb" Text="" FontSize="18" VerticalAlignment="Top"/>
     </Grid>
 </Window>

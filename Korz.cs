@@ -8,7 +8,11 @@ namespace WpfApp2
 {
     public class Korz
     {
-        public int ID { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
         public string image { get; set; }
+        public string kratkoe_opis { get; set; }
+        public string opis { get; set; }
+        public float price { get; set; }
     }
 }
